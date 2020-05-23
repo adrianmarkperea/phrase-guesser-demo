@@ -1,15 +1,276 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: 'Roboto';
+  color: #1d2026;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.1em;
+}
+
+header {
+  background: #fcfcfc;
+  padding: 1.5em 1em 1.5em;
+}
+
+header h1 {
+  margin-bottom: 0.8em;
+}
+
+header h2 {
+  margin-bottom: 1.2em;
+}
+
+a,
+a:visited,
+a:link {
+  color: #e43f5a;
+}
+
+header p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+header p:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  background: #cbd3d6;
+  padding: 0.125em;
+}
+
+.options {
+  background: #1b1b2f;
+  padding: 1em 1em 2em 1em;
+  color: white;
+}
+
+.options h2 {
+  margin-bottom: 1.2em;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin-bottom: 0.4em;
+}
+
+.input-group label {
+  flex: 1 0 2em;
+}
+
+.input-group span {
+  font-size: 0.9em;
+  margin-right: 0.4em;
+}
+
+.input-group input {
+  flex: 0 0 12em;
+}
+
+.input-group label::after {
+  content: ':'
+}
+
+.input-group input[type="text"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #e43f5a;
+  color: white;
+  font-family: 'PT Mono';
+}
+
+.input-group input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.3em;
+  background: #e43f5a;
+}
+
+
+.input-group input[type="text"]:disabled,
+.input-group input[type="range"]:disabled {
+  opacity: 0.4;
+}
+
+.input-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.input-group input[type="range"]::moz-range-thumb {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.options input[type="text"]:focus {
+  outline: none;
+}
+
+.options button[type="submit"] {
+  margin-top: 2em;
+  width: 8em;
+  padding: 0.4em;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  background: #e43f5a;
+  border-radius: 1em;
+}
+
+.options button[type="submit"]:disabled {
+  opacity: 0.4;
+}
+
+.container {
+  padding: 2em 0.5em;
+  margin: 0 auto;
+  width: 100%;
+  background: #ececec;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  width: 100%;
 }
 
 .mono {
   font-family: 'PT Mono';
 }
 
-h1, p {
-  margin: 0;
+.white-text {
+  color: #fff;
+}
+
+.red-bg {
+  background: #e43f5a;
+}
+
+.gold-text {
+  color: #e43f5a;
+}
+
+.fit-children {
+  font-size: 4.5vw;
+  text-align: center;
+}
+
+.stats-wrapper {
+  width: 80px;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 2em;
+  left: 0.5em;
+  cursor: pointer;
+}
+
+.stats {
+  background: #1b1b2f;
+  padding: 2px 3px;
+}
+
+.stats p {
+  color: #e43f5a;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.stats--graph {
+  position: relative;
+  width: 74px;
+  height: 30px;
+  background-color: #e43f5a;
+}
+
+.stats--buffer {
+  width: 1px;
+  height: 30px;
+  float: left;
+  background-color: #113;
+}
+
+footer {
+  color: white;
+  background: #000;
+  height: 2em;
+  line-height: 2em;
+  font-size: 0.8em;
+  padding-left: 1em;
+}
+
+footer a,
+footer a:visited,
+footer a:link {
+  color: white;
+}
+
+@media screen and (min-width: 750px) {
+  header p {
+    max-width: 750px;
+  }
+
+  .stats-wrapper {
+    left: 420px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  header p {
+    font-size: 1.4em;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+  }
+
+  .fit-children {
+    font-size: 2.9vw;
+    text-align: center;
+  }
+
+  .options {
+    padding: 10em 2em;
+  }
+
+  .options button[type="submit"] {
+    width: 100%;
+  }
+
+  .container {
+    height: 1000px;
+    overflow: auto;
+  }
 }
